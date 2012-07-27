@@ -4,11 +4,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BlockChanger extends JavaPlugin{
 	public void onEnable(){
-		getLogger().info("Plugin enabled, Bland stinks");
+		getLogger().info("Plugin enabled, Bland is fucking awesome!");
 	}
 	
 	public void onDisable(){
-		getLogger().info("Plugin disabled");
+		getLogger().info("aodhon probably broke something, didn't he?");
 	}
 
 }
