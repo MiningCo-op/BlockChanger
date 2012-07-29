@@ -1,6 +1,7 @@
 package com.miningcoop.blockchanger;
 
 import java.util.HashSet;
+import java.util.List;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -25,12 +26,20 @@ public class BlockChanger extends JavaPlugin {
 			Player player = (Player)sender;
 			if(player.getGameMode().equals(GameMode.CREATIVE)) {
 				ItemStack is = player.getItemInHand();
-				Block b = player.getTargetBlock(new HashSet<Byte>(), 100);
-				b.setTypeId(is.getTypeId());
-				//This spawns a block where the players face is,
-				//suffocating the player.
+				if(is.getType().isBlock()) {
+					Block b = player.getTargetBlock(null, 100);
+					b.setTypeId(is.getTypeId());
+					return true;
+				}
+				else {
+					player.sendMessage("Must be holding a block to use /asdf");
+					return false;
+				}
 			}
-			return true;
+			else {
+				player.sendMessage("Must be in creative to use /asdf");
+				return false;
+			}
 		}
 		return false;
 	}
