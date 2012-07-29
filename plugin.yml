@@ -1,3 +1,9 @@
 name: BlockClone
-main: com.aodhon.blockClone.BlockClone
+main: com.miningcoop.blockchanger.BlockChanger
 version: 0.1.0.0
+commands:
+   asdf:
+      description: asdfasdfasdf
+      usage: Use /asdf when looking at a block in creative.
+      permission: BlockChanger.asdf
+      permission-message: I'm afraid I can't let you do that.
